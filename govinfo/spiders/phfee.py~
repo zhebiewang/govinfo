@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+import scrapy
+from scrapy.contrib.linkextractors import LinkExtractor
+from scrapy.contrib.spiders import CrawlSpider, Rule
+
+from govinfo.items import PhfeeItem
+
+
+class PhfeeSpider(CrawlSpider):
+    name = 'phfee'
+    allowed_domains = ['nbgjj.com']
+    start_urls = ['http://www.nbgjj.com/index.jhtml']
+
+    rules = (
+        Rule(LinkExtractor(allow=r'tzgg/'), callback='parse_item', follow=True),
+    )
+
+    def parse_item(self, response):
+        i = GovinfoItem()
+        #i['domain_id'] = response.xpath('//input[@id="sid"]/@value').extract()
+        #i['name'] = response.xpath('//div[@id="name"]').extract()
+        #i['description'] = response.xpath('//div[@id="description"]').extract()
+        return i
