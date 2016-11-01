@@ -36,7 +36,7 @@ class PhfeeSpider(CrawlSpider):
 
     def get_content(self, response):
         content_list  = response.xpath('//ul[contains(@id,"content")]/div/p').extract()
-        content = ''.join(c.encode('utf-8') for c in content_list)
+        content = ''.join(c.encode('utf-8') for c in content_list)  
         return content
 
 
