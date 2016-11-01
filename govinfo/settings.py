@@ -14,7 +14,7 @@ SPIDER_MODULES = ['govinfo.spiders']
 NEWSPIDER_MODULE = 'govinfo.spiders'
 
 
-#ITEM_PIPELINES = ['govinfo.pipelines.GovinfoPipeline']
+ITEM_PIPELINES = {'govinfo.SQLpipelines.SQLPipeline':300}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'govinfo (+http://www.yourdomain.com)'
