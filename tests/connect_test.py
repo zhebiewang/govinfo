@@ -13,3 +13,13 @@ def close_database_connection(cursor, connection):
     cursor.close()
     connection.close()
     return
+
+
+connection, cursor = open_database_connection()
+
+cursor.execute ("SELECT VERSION()")
+row = cursor.fetchone ()
+print "server version:", row[0]
+
+cursor.close()
+connection.close()

@@ -5,7 +5,8 @@ class SQLPipeline(object):
 
 	def open_spider(self, spider):
 
-		self.connection = MySQLdb.connect(user='root', passwd='root', db='govdb', host='localhost', charset="utf8", use_unicode=True)
+		#self.connection = MySQLdb.connect(user='root', passwd='root', db='govdb', host='localhost', charset="utf8", use_unicode=True)
+		self.connection = MySQLdb.connect(user='root', passwd='root', db='govdb', host='192.168.1.111', charset="utf8", use_unicode=True)
 		self.cursor = self.connection.cursor()
 
 		pass
